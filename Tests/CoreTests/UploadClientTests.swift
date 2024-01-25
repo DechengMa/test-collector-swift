@@ -7,16 +7,17 @@ import FoundationNetworking
 
 final class UploadClientTests: XCTestCase {
   func testWaitSynchronouslyForUploads() throws {
-    let uploadCompleted = self.expectation(description: "upload completed")
-    let uploadClient = UploadClient.live(
-      api: .fulfill(uploadCompleted, after: 0.5),
-      runEnvironment: EnvironmentValues().runEnvironment()
-    )
-
-    uploadClient.record(trace: .mock())
-    uploadClient.waitForUploads()
-
-    self.wait(for: [uploadCompleted], timeout: 0)
+      XCTFail()
+//    let uploadCompleted = self.expectation(description: "upload completed")
+//    let uploadClient = UploadClient.live(
+//      api: .fulfill(uploadCompleted, after: 0.5),
+//      runEnvironment: EnvironmentValues().runEnvironment()
+//    )
+//
+//    uploadClient.record(trace: .mock())
+//    uploadClient.waitForUploads()
+//
+//    self.wait(for: [uploadCompleted], timeout: 0)
   }
 
   func testWaitShouldTimeout() throws {
